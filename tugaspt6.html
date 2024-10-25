@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Aplikasi Pembelian Buah</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            width: 600px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        input,
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+
+        .fruit-info {
+            text-align: left;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .fruit-info span {
+            font-weight: bold;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 16px;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Aplikasi Pembelian Buah</h1>
+        <div>
+            <input type="text" id="fruit-input" placeholder="Masukkan nama buah">
+            <button onclick="displayFruitInfo()">Lihat Info</button>
+        </div>
+        <div class="fruit-info">
+            <p>Nama Buah: <span id="fruit-name"></span></p>
+            <p>Harga/Kg: <span id="fruit-price"></span></p>
+            <p>Diskon: <span id="fruit-discount"></span></p>
+        </div>
+        <table>
+            <tr>
+                <th>Nama Buah</th>
+                <th>Harga / Kg</th>
+                <th>Diskon</th>
+            </tr>
+            <tr>
+                <td>Nanas</td>
+                <td>Rp 7.500</td>
+                <td>5%</td>
+            </tr>
+            <tr>
+                <td>Anggur</td>
+                <td>Rp 35.000</td>
+                <td>15%</td>
+            </tr>
+            <tr>
+                <td>Melon</td>
+                <td>Rp 12.500</td>
+                <td>10%</td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        const fruitData = [
+            { name: "Nanas", price: 7500, discount: "5%" },
+            { name: "Anggur", price: 35000, discount: "15%" },
+            { name: "Melon", price: 12500, discount: "10%" }
+        ];
+
+        function displayFruitInfo() {
+            const fruitInput = document.getElementById("fruit-input");
+            const fruitName = document.getElementById("fruit-name");
+            const fruitPrice = document.getElementById("fruit-price");
+            const fruitDiscount = document.getElementById("fruit-discount");
+
+            const selectedFruit = fruitData.find(fruit => fruit.name.toLowerCase() === fruitInput.value.toLowerCase());
+
+            if (selectedFruit) {
+                fruitName.textContent = selectedFruit.name;
+                fruitPrice.textContent = selectedFruit.price.toLocaleString("id-ID", { style: "currency", currency: "IDR" });
+                fruitDiscount.textContent = selectedFruit.discount;
+            } else {
+                fruitName.textContent = "Tidak ditemukan";
+                fruitPrice.textContent = "-";
+                fruitDiscount.textContent = "-";
+            }
+        }
+    </script>
+</body>
+
+</html>
