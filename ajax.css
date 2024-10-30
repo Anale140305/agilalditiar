@@ -1,0 +1,105 @@
+/* Mengatur latar belakang halaman dengan warna gelap */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* Gaya untuk kontainer form */
+form {
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    max-width: 500px;
+    width: 100%;
+    box-sizing: border-box;
+    color: #e0e0e0;
+}
+
+h1 {
+    text-align: center;
+    color: #ffcc00;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+label {
+    font-weight: bold;
+    color: #e0e0e0;
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #333;
+    background-color: #333;
+    color: #e0e0e0;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+input[type="submit"] {
+    background-color: #ff5722;
+    color: #ffffff;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+input[type="submit"]:hover {
+    background-color: #e64a19;
+}
+
+#show {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #333;
+    border-left: 6px solid #ffcc00;
+    color: #ffcc00;
+    font-size: 16px;
+    border-radius: 4px;
+    line-height: 1.5;
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 600px) {
+    form {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    input[type="text"],
+    textarea {
+        font-size: 14px;
+    }
+
+    input[type="submit"] {
+        font-size: 14px;
+        padding: 10px;
+    }
+}

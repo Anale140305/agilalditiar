@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paket Pembayaran</title>
+    <link rel="stylesheet" href="data.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <button id="toggle-dark-mode">Dark Mode</button>
+
+        <div id="main" data-loading="true"></div>
+        <form>
+            <label for="package">Pilih Paket:</label>
+            <select name="package" id="package">
+                <option data-price="100000" data-discount="10">Paket 1</option>
+                <option data-price="150000" data-discount="10">Paket 2</option>
+                <option data-price="200000" data-discount="10">Paket 3</option>
+            </select>
+
+            <div class="price-info">
+                <label for="price">Harga:</label>
+                <input type="text" name="price" readonly>
+                <br>
+                <label for="discount">Diskon:</label>
+                <input type="text" name="discount" readonly>
+                <br>
+                <label for="tax">Pajak (10%):</label>
+                <input type="text" name="tax" readonly>
+                <br>
+                <h4>Total: <span id="total">0</span></h4>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            function calculateTotal() {
+                const selectedOption = $('#package option:selected');
+                const price = parseFloat(selectedOption.data('price')) || 0;
+                const discountPercent = parseFloat(selectedOption.data('discount')) || 0;
+                const discountAmount = price * (discountPercent / 100);
+                const taxAmount = (price - discountAmount) * 0.1;
+                const total = (price - discountAmount) + taxAmount;
+
+                $('input[name="price"]').val(price.toFixed(2));
+                $('input[name="discount"]').val(discountAmount.toFixed(2));
+                $('input[name="tax"]').val(taxAmount.toFixed(2));
+                $('#total').text(total.toFixed(2));
+            }
+
+            $('#package').change(calculateTotal);
+            calculateTotal();
+
+            $('#toggle-dark-mode').click(function () {
+                $('body').toggleClass('dark-mode');
+                $(this).text($(this).text() === 'Dark Mode' ? 'Light Mode' : 'Dark Mode');
+            });
+        });
+    </script>
+</body>
+
+</html>

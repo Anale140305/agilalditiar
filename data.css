@@ -1,0 +1,118 @@
+/* Mengatur gaya global untuk mode terang (default) */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 5px;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Kontainer form */
+.container {
+    max-width: 350px;
+    width: 100%;
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button {
+    background-color: #4CAF50;
+    color: #ffffff;
+    border: none;
+    padding: 6px 12px;
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    margin-bottom: 15px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Input dan select styling */
+input[type="text"],
+select {
+    width: 100%;
+    padding: 6px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 12px;
+    background-color: #fafafa;
+}
+
+.price-info label,
+h4 {
+    font-size: 12px;
+    margin-top: 6px;
+    color: inherit;
+}
+
+/* Gaya untuk total harga */
+h4 {
+    font-size: 16px;
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+/* Dark mode */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-mode .container {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+}
+
+body.dark-mode input[type="text"],
+body.dark-mode select {
+    background-color: #333;
+    border: 1px solid #444;
+    color: #e0e0e0;
+}
+
+body.dark-mode h4 {
+    color: #ffcc00;
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 400px) {
+    .container {
+        padding: 8px;
+    }
+
+    button {
+        font-size: 10px;
+        padding: 5px 10px;
+    }
+
+    input[type="text"],
+    select {
+        font-size: 10px;
+        padding: 5px;
+    }
+
+    h4 {
+        font-size: 14px;
+    }
+}
