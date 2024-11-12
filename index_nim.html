@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Buku</title>
+</head>
+
+<body>
+    <h1>Daftar Buku</h1>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Kode Buku</th>
+            <th>Nama Buku</th>
+            <th>Penerbit</th>
+            <th>Pengarang</th>
+            <th>Jumlah Buku</th>
+            <th>Aksi</th>
+        </tr>
+        {% for b in buku %}
+        <tr>
+            <td>{{ b[0] }}</td>
+            <td>{{ b[1] }}</td>
+            <td>{{ b[2] }}</td>
+            <td>{{ b[3] }}</td>
+            <td>{{ b[4] }}</td>
+            <td>{{ b[5] }}</td>
+            <td>
+                <a href="/edit/{{ b[0] }}">Edit</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <a href="/tambah">Tambah Buku</a>
+</body>
+
+</html>
