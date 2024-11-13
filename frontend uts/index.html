@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perhitungan Biaya Kirim Paket</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>PERHITUNGAN BIAYA KIRIM PAKET</h2>
+        <form>
+            <label for="nomorResi">Nomor Resi:</label>
+            <input type="text" id="nomorResi" placeholder="Masukkan nomor resi"><br>
+
+            <label for="beratBarang">Berat Barang (Kg):</label>
+            <input type="number" id="beratBarang" placeholder="Masukkan berat barang" min="0" step="0.1"><br>
+
+            <label for="kotaAsal">Kota Asal:</label>
+            <select id="kotaAsal">
+                <option value="">Pilih Kota Asal</option>
+                <option value="banyuwangi">Banyuwangi</option>
+                <option value="jember">Jember</option>
+                <option value="probolinggo">Probolinggo</option>
+                <option value="surabaya">Surabaya</option>
+            </select><br>
+
+            <label for="kotaTujuan">Kota Tujuan:</label>
+            <select id="kotaTujuan">
+                <option value="">Pilih Kota Tujuan</option>
+                <option value="banyuwangi">Banyuwangi</option>
+                <option value="jember">Jember</option>
+                <option value="probolinggo">Probolinggo</option>
+                <option value="surabaya">Surabaya</option>
+            </select><br>
+
+            <label for="totalBiaya">Total Biaya Pengiriman: Rp.</label>
+            <input type="text" id="totalBiaya" readonly><br>
+
+            <button type="button" onclick="hitungBiaya()">Hitung</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
